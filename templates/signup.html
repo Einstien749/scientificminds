@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div id="signup">
+        {% if messages %}
+            {% for m in messages %}
+                <div id="logmess">
+                    {{m}}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <form method="post" style="opacity: 0; transition: opacity 2s ease-in-out"> {% csrf_token %}
+            <img src={% static "logs.png" %} alt="SM" style="border: 5px rgb(255,255,255) outset; width: 40px; height: 40px; border-radius: 50%; margin-left: calc((100% - 50px)/2)"/>
+            {{ form.as_p }}
+            <input type="submit" value="Signup" />
+        </form>
+    </div>
+{% endblock content %}

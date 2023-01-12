@@ -1,0 +1,126 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+    <head>
+        <title>
+            {{post.posturl}}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta name="author" content="Odimayo Taiye" >
+        <meta name="keywords" content="{{post.title}}">
+        <meta name="description" content="{{post.description}}">
+        <link rel="icon" href="{% static 'logs.png' %}" type="image/png"/>
+        <script src="https://kit.fontawesome.com/9ec37e7600.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href={% static "base.css" %} />
+        <script type="text/javascript" src={% static 'nav.js' %}></script>
+        <link href={% static 'post.css' %} rel="stylesheet" />
+        <script type="text/javascript">
+            function Hidepreloader(){
+                setTimeout(() => {
+                    document.getElementById("preloader").style.display = "none";
+                    document.getElementById("normnav").style.display = "flex";
+                    document.getElementById("anime").style.display = "block";
+                    document.getElementById("dbody").style.display = "block";
+                }, 1500);
+                setTimeout(() => {
+                    let y = document.querySelector("div#login > form");
+                    let k = document.querySelector("div#signup > form");
+                    if(y != null){
+                        y.style.opacity = "1";
+                    }
+                    if(k != null){
+                        k.style.opacity = "1";
+                    }  
+                }, 3000);
+                if((localStorage.username) && (localStorage.password)){
+                    document.getElementById("username").value = localStorage.username;
+                    document.getElementById("password").value = localStorage.password;
+                }
+                let v = document.querySelector("fa-copy");
+                console.log(v, document.getElementsByClassName("fa-copy"));
+                if(v != null){
+                    v.forEach((item) => {
+                        console.log(item);
+                        item.addEventListener("click", "alert('Hi')");
+                    });
+                }
+            }
+            function Sub(){
+                let j = document.getElementById("rem");
+                if(localStorage){
+                    if(j.checked){
+                        let m = document.getElementById("username");
+                        let n = document.getElementById("password");
+                        if((m.value != "") && (n.value != "")){
+                            localStorage.username = m.value;
+                            localStorage.password = n.value;
+                        }
+                        else{
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            function Category(){
+                console.log(event.target.parentElement.parentElement.children[1]);
+                let y = document.getElementsByClassName("skate");
+                for(let m = 0; m<y.length; m++){
+                    y[m].style.opacity = "0";
+                    y[m].style.transform = "translateX(-20px)";
+                    y[m].style.display = "none";
+                }
+                event.target.parentElement.parentElement.children[1].style.display = "block";
+                event.target.parentElement.parentElement.children[1].style.opacity = "1";
+                event.target.parentElement.parentElement.children[1].style.transform = "translateX(0px)";                
+            }
+            setInterval(() => {
+                let k = document.getElementById("normnav");
+                let po = document.documentElement.scrollTop;
+                if((po > 4500) && (po < 6000)){
+                    k.style.opacity = "0";
+                    setTimeout(() => {
+                        k.style.display = "none";
+                    }, 100);
+                }
+                else{
+                    k.style.display = "flex";
+                    setTimeout(() => {
+                        k.style.opacity = "1";
+                    }, 100);
+                }
+            }, 100);
+        </script>
+    </head>
+    <body onload="Hidepreloader();">
+        <nav id="normnav" style="display: none; opacity: 1; transition: opacity 0.15s ease-in-out;">
+            <img src={% static "log.png" %} alt="SM" style="width: 60px; height: 100%" />
+            <p style="text-align: center; padding-top: 0px; font-size: 0.825em; font-family: monospace;">
+                <i style="color: rgb(255,0,0); ">SCIENTIFIC</i><i>MINDS</i>
+            </p>
+            <span>
+                <a href={% url "home" %}>home</a>
+                <a href={% url "logins" %}></>login</a>
+                <a href={% url "signup" %}></>signup</a>
+            </span>
+            <i class="fa fa-bars fa-2x" onclick="Shownav();"></i>
+        </nav>
+        <div id="anime" style="font-size: 0.2em; background-color: rgb(255,0,0); height: 5px; color: rgb(255,0,0); position: fixed; top: 50px; width: 0%; transition: width 0.05s ease-in-out; display: none;">
+            d    
+        </div>
+        <div id="preloader" style="display: block; width: 100%;">
+            <div>
+                
+            </div>
+        </div>
+        <div id="dbody" style="display: none;">
+        {% block content %}
+        {% endblock content %}
+        </div>
+        <div id="smallnav" style="display: none; opacity: 0; transition: opacity 1s ease-in-out;">
+            <a href={% url "home" %}><i class="fa-solid fa-house fa-2x" style="color: rgb(255,0,0);"></i></a>
+            <a href={% url "logins" %}><i class="fas fa-user-circle fa-2x" style="color: rgb(255,0,0);"></i></a>
+            <a href={% url "signup" %}><i class="fa-solid fa-user-plus fa-2x" style="color: rgb(255,0,0);"></i></a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,264 @@
+/* Styling For Post Page */
+div#post {
+    width: 100%;
+    height: 8100px;
+    min-height: 8100px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div#post > div#description {
+    height: 62%;
+}
+/* Styling For Comment Section */
+div#post > div#comment {
+    height: 13%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* Styling For Comment Section*/
+div#comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div#comment > div#head {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.25em;
+    height: 5%;
+}
+div#comment > div#head > div {
+    width: 20%;
+    height: 10%;
+    margin-left: 40%;
+    background-color: rgb(255,0,0);
+    color: rgb(255,0,0);
+}
+
+div#comment > div#commentitems {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50%;
+}
+
+div#comment > div#commentbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 32.5%;
+    border: 2px outset rgba(255,255,255,0.7);
+    border-radius: 5px;
+}
+
+div#comment > div#commentbox > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    text-align: center;
+}
+div#comment > div#commentbox > div > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 98%;
+    margin-left: 1%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 80%;
+}
+div#comment > div#commentbox > div textarea {
+    height: 75%;
+    width: 90%;
+    margin-left: 4.75%;
+    background-color: rgba(255,255,255,0.6);
+}
+div#comment > div#commentitems > div.humancomment > div.git {
+    display: block;
+    background-color: rgba(255,255,255,0.6);
+    width: 98%;
+    margin-left: 1%;
+    border-radius: 10px;
+    padding-top: 5px;
+    text-indent: 20px;
+    height: 62%;
+}
+div.humancomment {
+    width: calc(100% - 5px);
+    border-left: 5px rgb(255,0,0) solid;
+} /**/
+
+div#post > div#other {
+    height: 22%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div#description > div > img {
+    height: 300px;
+    width: calc(100% - 20px);
+    border: 10px rgb(255,255,255) outset;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+div#description > div > div {
+    font-size: 1.25em;
+    height: calc(100% - 300px);
+}
+div#description > div > div pre {
+    width: 100%;
+    background-color: rgb(0,0,0);
+}
+div#description > div > div pre i.fa-copy {
+    position: absolute;
+    left: 90%;
+    top: 0%;
+}
+div#description > div > div code {
+    width: 100%;
+    height: 100%;
+    color: rgb(255,0,0);
+    margin-left: calc((100% - 150px)/2);
+}
+div#description > div > div emp {
+    width: 100%;
+}
+div#description > div > div ol {
+    list-style: decimal;
+}
+div#description > div > table {
+    width: 98%;
+    margin-left: 1%;
+    height: auto;
+}
+div#description > div table > tbody > tr:nth-child(odd) {
+    background-color: rgb(225,225,225);
+}
+div#description > div > div p {
+    text-indent: 50px;
+}
+div#relatedpost {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px; 
+}
+div.relposts {
+    height: 250px;
+    background-color: rgba(255,255,255,0.7);
+    display: flex;
+    flex-direction: column;
+    border: 5px rgba(255,255,255,0.7) outset;
+    margin-left: calc(3% - 5px);
+    width: 94%;
+    justify-content: space-between;
+}
+div.relposts button {
+    width: 60%;
+    background-color: rgb(255,0,0);
+    height: 40px;
+}
+div.relposts > img {
+    height: 100px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+div#other > div:nth-child(1){
+    height: 55%;
+}
+div#other > div:nth-child(2){
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90%;
+    margin-left: 5%;
+}
+div#other > div:nth-child(2) > div:nth-child(2) {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div#other > div:nth-child(2) > div:nth-child(2) > textarea {
+    height: 60%;
+}
+div#other > div:nth-child(2) > div:nth-child(2) > div {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div#other > div:nth-child(2) > div:nth-child(2) > div > input {
+    width: 45%;
+}
+div#other > div:nth-child(3){
+    height: 6%;
+}
+li > span {
+    color: rgb(255,0,0);
+}
+
+@media screen and (min-width: 700px){
+    div#description > div > img {
+        width: 500px;
+        margin-left: calc((100% - 500px)/2);
+    }
+    /*div#post {
+        height: 6700px;
+        min-height: 6700px;
+    }*/
+    
+    div#description > div > div {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    div#relatedpost {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        width: 600px;
+        margin-left: calc((100% - 600px)/2);
+    }
+    div#other > div:nth-child(2){
+        width: 600px;
+        margin-left: calc((100% - 600px)/2);
+    }
+    div#post > div#description {
+        height: 3700px;
+    }
+    div#post > div#other {
+        height: 1300px;
+    }
+    div#commentitems, div#commentbox {
+        width: 600px;
+        margin-left: calc((100% - 600px)/2);
+    }
+    div#post > div#comment{
+        height: 1100px;
+    }
+    div#other > div:nth-child(3){
+        height: 8%;
+    }
+    div#other > div:nth-child(1){
+        height: 52.5%;
+    }
+    div#other > div:nth-child(2){
+        height: 37.5%;
+    }
+}
+@media screen and (max-width: 360px){
+    div#post {
+        min-height: 8300px;
+    }
+}

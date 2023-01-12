@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+<head>
+    <title>
+        Login
+    </title>
+</head>
+{% block content %}
+    <div id="login">
+        {% if messages %}
+            {% for m in messages %}
+                <div id="logmess">
+                    {{m}}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <form method="post" style="opacity: 0; transition: opacity 2s ease-in-out" onsubmit="Sub();"> {% csrf_token %}
+            <img src={% static "logs.png" %} alt="SM" style="border: 5px rgb(255,255,255) outset; width: 40px; height: 40px; border-radius: 50%; margin-left: calc((100% - 50px)/2)"/>
+            <div><i class="fa-solid fa-user fa-1x"></i><input type="text" autocomplete="on" name="username" id="username" placeholder="username" required="true" autofocus="true"/></div>
+            <div><i class="fas fa-lock fa-1x"></i><input type="password" name="password" id="password" placeholder="password" required="true"/></div>
+            <input type="submit" value="Login" />
+            <p style="font-size: 1.125em"><input type="checkbox" id="rem" checked=true style="background-color: rgb(255,0,0)" /> <span>remember me</span></p>
+        </form>
+    </div>
+{% endblock content %}
