@@ -25,7 +25,7 @@
             {% for q in quotes %}
                 <div class="qoute" style="padding-top: 80px;">
                     <img src={{q.author_img.url}} />
-                    <p style="font-weight: 900; text-align: center;"> {{ q.author }}</p>
+                    <p style="font-weight: 800; text-align: center;"> {{ q.author }}</p>
                     <p>
                         <sup style="font-style: italic; font-size: 1.25em">"""</sup>  {{q.quote}}  <sub style="font-style: italic; font-size: 1.25em">"""</sub>
                     </p>
@@ -51,7 +51,7 @@
         </section>
         <section id="comment">
             <div id="head">
-                <h3 style="font-family: monospace; font-size: 1.5em;">MOST RECENT COMMENTS</h3>
+                <h3 style="font-family: monospace; font-size: 1.45em;">MOST RECENT COMMENTS</h3>
                 <div style="font-size: 0.2em">e</div>
             </div>
             <div id="commentitems">
@@ -124,12 +124,12 @@
             </div>
         </section>
         <section class="adds" style="transform: translateX(-100%); transition: transform 1.25s ease-in-out;">
-            <h3 style="font-size: 1.75em; font-weight: 900; text-align: center; font-family: monospace">BROWSE BY CATEGORY</h3>
+            <h3 style="font-size: 1.45em; font-weight: 800; text-align: center; font-family: monospace">BROWSE BY CATEGORY</h3>
             <div style="font-size: 0.2em; width: 20%; margin-left: 40%; background-color: rgb(255,0,0); height: 5px;">e</div>
             <div>
                 {% for a in category %}
-                    <div class="cates" style="font-family: monospace; font-size: 1.25em">
-                        <p style="font-weight: 700; width: 200px; display: flex; flex-direction: row; justify-content: space-between;">{{a.category|upper}} <button class="fa fa-cross" onclick="Category();" style="font-family: monospace">Click</button></p>
+                    <div class="cates" style="font-family: monospace; font-size: 1.125em">
+                        <p style="font-weight: 700; width: 200px; display: flex; flex-direction: row; justify-content: space-between;">{{a.category|upper}} <i class="fa fa-cross" onclick="Category();" style="font-family: monospace"></i></p>
                         <div id={{a.category}} style="display: none; height: 150px; opacity: 0; transform: translateX(-20px); transition: transform 2s ease-in-out, opacity 2s ease-in-out;" class="skate">
                             {% if a.category == "web_development" %}
                                 {% if web_development %}
@@ -222,8 +222,8 @@
         </section>
         <section id="footer" style="background-color: rgb(20,20,20)">
             <div id="contactinfo">
-                <div style="text-align: center; font-size: 1.25em; font-family: monospace; color: rgb(255,255,255)">
-                    <h3 style="font-size: 1.5em; font-weight: 800;">GET IN TOUCH</h3>
+                <div style="text-align: center; font-size: 1.20em; font-family: monospace; color: rgb(255,255,255)">
+                    <h3 style="font-size: 1.45em; font-weight: 800;">GET IN TOUCH</h3>
                     <div style="font-size: 0.2em; width: 20%; margin-left: 40%; background-color: rgb(255,0,0); height: 5px;">e</div>
                     <p> Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
                 </div>

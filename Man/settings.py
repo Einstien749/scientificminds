@@ -11,19 +11,24 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+SECRET_KEYS = os.getenv("SECRET_KEY")
+EMAIL_HOST_PASSWORDS = os.getenv("EMAIL_HOST_PASSWORD")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'y+ruzwo2vl&lebbwxyq-$$fyf^s!-wu%q@)af2d1di=6(l4je4'
+SECRET_KEY = os.getenv("SECRET_KEY")
+#'y+ruzwo2vl&lebbwxyq-$$fyf^s!-wu%q@)af2d1di=6(l4je4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -139,7 +144,8 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 
 EMAIL_HOST_USER = 'apikey'
 
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORDS
+#'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'
 
 EMAIL_PORT = 587
 
