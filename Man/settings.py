@@ -25,10 +25,9 @@ EMAIL_HOST_PASSWORDS = os.getenv("EMAIL_HOST_PASSWORD")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
-#'y+ruzwo2vl&lebbwxyq-$$fyf^s!-wu%q@)af2d1di=6(l4je4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 

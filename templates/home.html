@@ -102,7 +102,7 @@
                         <div>
                             <i class="fa-solid fa-laptop-code fa-2x" style="color: rgb(255,0,0);"></i>
                             <p>SOFTWARE DEVELOPMENT</p>
-                            <p> I convert Figma or PSD design perfectly to responsive website UI, using current best practices</p>
+                            <p> I develop softwares that automate processes, using current best engineering practices</p>
                         </div>
                         <div>
                             <i class="fas fa-mobile fa-2x" style="color: rgb(255,0,0);"></i>
@@ -111,8 +111,8 @@
                         </div>
                         <div>
                             <i class="fa-sharp fa-solid fa-code fa-2x" style="color: rgb(255,0,0);"></i>
-                            <p>WEB DEVELOPMENT</p>
-                            <p> I convert Figma or PSD design perfectly to responsive website UI, using current best practices</p>
+                            <p>ALGORITHM DESIGN</p>
+                            <p> I develope high performance algorithms</p>
                         </div>
                         <div>
                             <i class="fa-sharp fa-solid fa-code fa-2x" style="color: rgb(255,0,0);"></i>
@@ -129,7 +129,7 @@
             <div>
                 {% for a in category %}
                     <div class="cates" style="font-family: monospace; font-size: 1.125em">
-                        <p style="font-weight: 700; width: 200px; display: flex; flex-direction: row; justify-content: space-between;">{{a.category|upper}} <i class="fa fa-cross" onclick="Category();" style="font-family: monospace"></i></p>
+                        <p style="font-weight: 700; width: 200px; display: flex; flex-direction: row; justify-content: space-between;">{{a.category|upper}} <button onclick="Category();" style="font-family: monospace"></button></p>
                         <div id={{a.category}} style="display: none; height: 150px; opacity: 0; transform: translateX(-20px); transition: transform 2s ease-in-out, opacity 2s ease-in-out;" class="skate">
                             {% if a.category == "web_development" %}
                                 {% if web_development %}
